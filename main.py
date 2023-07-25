@@ -4,8 +4,8 @@ from post import Post
 import smtplib
 import os
 
-MY_EMAIL = os.environ["MY_EMAIL"]
-PASSWORD = os.environ["PASSWORD"]
+MY_EMAIL = os.environ.get("MY_EMAIL")
+PASSWORD = os.environ.get("PASSWORD")
 
 app = Flask(__name__)
 BLOG_POSTS_API = "https://api.npoint.io/1fd6513ca420610e88d8"
