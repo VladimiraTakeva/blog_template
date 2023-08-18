@@ -30,18 +30,27 @@
                     {% for post in all_posts %}
                     <div class="post-preview">
 
-                        <a href="{{url_for('blog', num=post.id)}}"><h2 class="post-title">{{ post.title }}</h2></a>
+                        <a href="{{url_for('blog', post_id=post.id)}}"><h2 class="post-title">{{ post.title }}</h2></a>
 
 <!--                            <h3 class="post-subtitle">{{ post.subtitle }}</h3>-->
 
                         <p class="post-meta">
                             Posted by
-                            <a href="{{url_for('about')}}">Mira</a>
-                            on September 24, 2023
+                            <a href="#">{{post.author}}</a>
+                            on {{post.date}}
+                            <a href="{{ url_for('delete_post', post_id=post.id) }}">✘</a
+        >
                         </p>
                     </div>
                     {% endfor %}
+                    <div class="d-flex justify-content-end mb-4">
 
+                    <a
+                      class="btn btn-primary float-right"
+                      href="{{url_for('create_new_post')}}"
+                      >Create New Post</a
+                    >
+                  </div>
                     <!-- Divider-->
                     <hr class="my-4" />
                     <!-- Pager-->
